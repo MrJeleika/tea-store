@@ -1,0 +1,21 @@
+.link {
+  position: relative;
+  padding-bottom: 4px;
+  font-size: 24px;
+  margin: 0 10px;
+  &::after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    bottom: 0;
+    width: 100%;
+    transition: all 0.3s ease;
+    left: 0;
+    background: white;
+    opacity: 0;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}

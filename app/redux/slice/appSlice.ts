@@ -1,24 +1,21 @@
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+import { HYDRATE } from 'next-redux-wrapper';
 
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
-import { HYDRATE} from 'next-redux-wrapper'
-
-
-export interface IInitialState{
-  counter: number
+export interface IInitialState {
+  counter: number;
 }
 
 const initialState: IInitialState = {
-  counter: 0
-}
+  counter: 0,
+};
 
 const appSlice = createSlice({
   name: 'app',
   initialState,
   reducers: {
     setCounter: (state, action: PayloadAction<number>) => {
-      state.counter = action.payload
+      state.counter = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -28,9 +25,7 @@ const appSlice = createSlice({
       }
     });
   },
-})
+});
 
-export const {
-  setCounter
-} = appSlice.actions
-export default appSlice.reducer
+export const { setCounter } = appSlice.actions;
+export default appSlice.reducer;
